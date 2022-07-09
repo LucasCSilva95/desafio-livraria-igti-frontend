@@ -8,6 +8,7 @@
     "@testing-library/react": "11.1.0",
     "@testing-library/user-event": "12.1.10",
     "axios": "0.21.1",
+    "dotenv": "16.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "4.2.0",
@@ -26,7 +27,7 @@
     "react-error-overlay": "6.0.9"
   },
   "scripts": {
-    "dev": "craco start",
+    "dev": "set PORT=3001 && craco start",
     "build": "craco build",
     "prod:local": "craco build && serve -s build",
     "prod:cloud": "craco build && netlify deploy --prod --open --dir build",
