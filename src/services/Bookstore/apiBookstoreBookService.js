@@ -17,6 +17,15 @@ export async function apiGetBookById(bookId) {
   return book;
 }
 
+export async function apiGetBookByAuthorId(authorId) {
+  const book = await get(`${BASE_URL}/livro?autorId=${authorId}`).catch(
+    (error) => {
+      errorResponse(error);
+    }
+  );
+  return book;
+}
+
 export async function apiCreateBook(bookData) {
   const book = await post(`${BASE_URL}/livro/`, bookData).catch((error) => {
     errorResponse(error);
