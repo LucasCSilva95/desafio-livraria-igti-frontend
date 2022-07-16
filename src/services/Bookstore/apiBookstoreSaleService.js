@@ -17,6 +17,33 @@ export async function apiGetSaleById(saleId) {
   return sale;
 }
 
+export async function apiGetSaleByCustomerId(customerId) {
+  const sale = await get(`${BASE_URL}/venda?clienteId=${customerId}`).catch(
+    (error) => {
+      errorResponse(error);
+    }
+  );
+  return sale;
+}
+
+export async function apiGetSaleByAuthorId(authorId) {
+  const sale = await get(`${BASE_URL}/venda?autorId=${authorId}`).catch(
+    (error) => {
+      errorResponse(error);
+    }
+  );
+  return sale;
+}
+
+export async function apiGetSaleBybookId(bookId) {
+  const sale = await get(`${BASE_URL}/venda?livroId=${bookId}`).catch(
+    (error) => {
+      errorResponse(error);
+    }
+  );
+  return sale;
+}
+
 export async function apiCreateSale(saleData) {
   const sale = await post(`${BASE_URL}/venda/`, saleData).catch((error) => {
     errorResponse(error);
