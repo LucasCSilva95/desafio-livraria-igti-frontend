@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react";
+import Books from "../components/Books";
 import Header from "../components/Header";
 import Main from "../components/Main";
-import { apiGetAllCustomers } from "../services/Bookstore/apiBookstoreCustomerService";
+import { apiGetAllBooks } from "../services/Bookstore/apiBookstoreBookService";
 
-export default function BookstorePage() {
-  const [allCustomers, setAllCustomers] = useState([]);
+export default function RatingstorePage() {
+  const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    apiGetAllCustomers().then((allCustomers) => {});
-  });
+    apiGetAllBooks().then((apiBooks) => {
+      console.log(apiBooks);
+      setBooks(apiBooks);
+    });
+  }, []);
 
   return (
     <>
       <Header>Bookstore</Header>
 
-      <Main>The content is here!</Main>
+      <Main>
+        <Books>{books}</Books>
+      </Main>
     </>
   );
 }
