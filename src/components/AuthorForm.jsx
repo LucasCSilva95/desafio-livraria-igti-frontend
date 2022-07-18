@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
+import EmailInput from "./EmailInput";
 import TextInput from "./TextInput";
 
 export default function Author({
@@ -36,7 +37,7 @@ export default function Author({
         inputValue={name || inputName}
         onInputChange={handleNameChange}
       />
-      <TextInput
+      <EmailInput
         labelDescription="E-mail"
         inputValue={email || inputEmail}
         onInputChange={handleEmailChange}
